@@ -81,32 +81,30 @@ export default () => {
         <CssBaseline />
         <a href="/sub">메인페이지</a>
 
-        <React.Suspense fallback={<em>{t('loading')}...</em>}>
-          <GridList className={classes.gridList} cols={1} cellHeight="auto">
-            <GridListTile key="Subheader">
-              <ListSubheader component="div">{t('gameList')}</ListSubheader>
+        <GridList className={classes.gridList} cols={1} cellHeight="auto">
+          <GridListTile key="Subheader">
+            <ListSubheader component="div">{t('gameList')}</ListSubheader>
+          </GridListTile>
+          {tileData.map((tile) => (
+            <GridListTile key={tile.img} className={classes.tile}>
+              <a href="/game/findDiff">
+                <img src={tile.img} alt={t(tile.title)} />
+                <GridListTileBar
+                  title={t(tile.title)}
+                  subtitle={<span>{t(tile.description)}</span>}
+                  actionIcon={
+                    <IconButton
+                      aria-label={`info about ${t(tile.title)}`}
+                      className={classes.icon}
+                    >
+                      <InfoIcon />
+                    </IconButton>
+                  }
+                />
+              </a>
             </GridListTile>
-            {tileData.map((tile) => (
-              <GridListTile key={tile.img} className={classes.tile}>
-                <a href="/game/findDiff">
-                  <img src={tile.img} alt={t(tile.title)} />
-                  <GridListTileBar
-                    title={t(tile.title)}
-                    subtitle={<span>{t(tile.description)}</span>}
-                    actionIcon={
-                      <IconButton
-                        aria-label={`info about ${t(tile.title)}`}
-                        className={classes.icon}
-                      >
-                        <InfoIcon />
-                      </IconButton>
-                    }
-                  />
-                </a>
-              </GridListTile>
-            ))}
-          </GridList>
-        </React.Suspense>
+          ))}
+        </GridList>
       </div>
     </ThemeProvider>
   );
