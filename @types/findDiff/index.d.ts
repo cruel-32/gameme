@@ -21,7 +21,7 @@ declare interface IFindDiffActionPayload {
 declare interface IFindDiffImageData {
   img: string;
   diffImg: string;
-  desc: string;
+  description: string;
   author: string;
   url: string;
   tags: string[];

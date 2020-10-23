@@ -52,7 +52,7 @@ export default () => {
                 />
                 <GridListTileBar
                   title={t(tile.title)}
-                  subtitle={<span>{t(tile.desc)}</span>}
+                  subtitle={<span>{t(tile.description)}</span>}
                   actionIcon={
                     <IconButton
                       aria-label={`info about ${t(tile.title)}`}

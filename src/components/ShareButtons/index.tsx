@@ -9,7 +9,7 @@ type KakaoShareButtonProps = {
   imageUrl?: string;
   btnImageUrl?: string;
   title?: string;
-  desc?: string;
+  description?: string;
   btnTitle?: string;
   className?: string;
   children?: ReactNode | Text;
@@ -20,7 +20,7 @@ type LineShareButtonProps = {
   imageUrl?: string;
   btnImageUrl?: string;
   title?: string;
-  desc?: string;
+  description?: string;
   btnTitle?: string;
   className?: string;
   children?: ReactNode | Text;
@@ -31,7 +31,7 @@ type FacebookShareButtonProps = {
   imageUrl?: string;
   btnImageUrl?: string;
   title?: string;
-  desc?: string;
+  description?: string;
   btnTitle?: string;
   className?: string;
   children?: ReactNode | Text;
@@ -61,7 +61,7 @@ export const KakaoShareButton = (props: KakaoShareButtonProps) => {
     url = 'https://gameme.netlify.app',
     imageUrl = 'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
     title = '게임공유',
-    desc = '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+    description = '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
     btnTitle = '도전',
     btnImageUrl = 'https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png',
     className,
@@ -75,7 +75,7 @@ export const KakaoShareButton = (props: KakaoShareButtonProps) => {
         objectType: 'feed',
         content: {
           title,
-          desc,
+          description,
           imageUrl,
           link: {
             mobileWebUrl: url,

@@ -55,7 +55,7 @@ export const IntroView = () => {
         kakao={{
           url: 'https://gameme.netlify.app/game/findDiff',
           title: `${t('findDiff')}, ${t('letsTry')}`,
-          desc: `${t('desc')}`,
+          description: `${t('description')}`,
         }}
         line={{
           url: 'https://gameme.netlify.app/game/findDiff',

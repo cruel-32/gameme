@@ -102,7 +102,7 @@ const ImageViewWrap = styled.div`
 
 export const GameImages = (props: IGameImagesProps) => {
   const { quizImage, clickRight, clickWrong } = props;
-  const { img, diffImg, diffPoints, desc } = quizImage;
+  const { img, diffImg, diffPoints, description } = quizImage;
 
   return (
     <ImageViewWrap>
@@ -116,7 +116,7 @@ export const GameImages = (props: IGameImagesProps) => {
             style={diffPoint}
           />
         ))}
-        <img src={img} alt={desc} onClick={clickWrong} />
+        <img src={img} alt={description} onClick={clickWrong} />
       </div>
 
       <div className="right-panel">
@@ -129,7 +129,7 @@ export const GameImages = (props: IGameImagesProps) => {
             style={diffPoint}
           />
         ))}
-        <img src={diffImg} alt={desc} onClick={clickWrong} />
+        <img src={diffImg} alt={description} onClick={clickWrong} />
       </div>
     </ImageViewWrap>
   );
@@ -140,11 +140,11 @@ export const GameBlockquote = ({
 }: Pick<IGameImagesProps, 'quizImage'>) => {
   const { t } = useTranslation();
 
-  const { desc, url, author, tags } = quizImage;
+  const { description, url, author, tags } = quizImage;
 
   return (
     <blockquote>
-      <p className="para">{t(desc)}</p>
+      <p className="para">{t(description)}</p>
       <cite className="cite">
         <Button variant="outlined" color="primary" href={url} target="_blank">
           <strong className="name">{author}</strong>
