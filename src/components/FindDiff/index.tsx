@@ -10,6 +10,7 @@ import { GameView } from './gameView';
 import { OuttroView } from './outtroView';
 
 const Divider = styled.div`
+  margin: 10px 0;
   display: flex;
   justify-content: space-around;
 `;

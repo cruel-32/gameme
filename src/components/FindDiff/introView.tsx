@@ -6,11 +6,7 @@ import useSound from 'use-sound';
 import { useTranslation } from 'react-i18next';
 
 import { ActionContext, StateContext } from '@/context/findDiff';
-import {
-  KakaoShareButton,
-  LineShareButton,
-  FacebookShareButton,
-} from '@/components/ShareButtons';
+import Sharebuttons from '@/components/ShareButtons';
 
 const IntroViewWrap = styled.div`
   text-align: center;
@@ -56,18 +52,19 @@ export const IntroView = () => {
         </Button>
         <p>{t('findDiffDesc')}</p>
       </DescWrap>
-      <div>
-        <p>
-          <strong>{t('SNS')}</strong>
-        </p>
-        <KakaoShareButton
-          url="https://gameme.netlify.app/game/findDiff"
-          title={`${t('findDiff')}, ${t('letsTry')}`}
-          description={`${t('description')}`}
-        />
-        <LineShareButton url="https://gameme.netlify.app/game/findDiff" />
-        <FacebookShareButton url="https://gameme.netlify.app/game/findDiff" />
-      </div>
+      <Sharebuttons
+        kakao={{
+          url: 'https://gameme.netlify.app/game/findDiff',
+          title: `${t('findDiff')}, ${t('letsTry')}`,
+          description: `${t('description')}`,
+        }}
+        line={{
+          url: 'https://gameme.netlify.app/game/findDiff',
+        }}
+        facebook={{
+          url: 'https://gameme.netlify.app/game/findDiff',
+        }}
+      />
     </IntroViewWrap>
   );
 };

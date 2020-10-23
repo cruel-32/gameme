@@ -2,6 +2,7 @@
 /* eslint-disable react/require-default-props */
 import React, { ReactNode, useEffect } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 type KakaoShareButtonProps = {
   url?: string;
@@ -36,14 +37,23 @@ type FacebookShareButtonProps = {
   children?: ReactNode | Text;
 };
 
+export interface ShareButtonsProps {
+  kakao?: KakaoShareButtonProps;
+  line?: LineShareButtonProps;
+  facebook?: FacebookShareButtonProps;
+  className?: string;
+}
+
 const KakaoBtnWrap = styled.div`
   display: inline-block;
   padding: 0;
   outline: none;
   max-width: 45px;
-  margin-left: 3px;
   margin-right: 3px;
   cursor: pointer;
+  img {
+    width: 100%;
+  }
 `;
 
 export const KakaoShareButton = (props: KakaoShareButtonProps) => {
@@ -124,33 +134,48 @@ export const LineShareButton = (props: LineShareButtonProps) => {
   );
 };
 
-const FacebookBtnWrap = styled.div`
-  display: inline-block;
-  max-width: 45px;
-  margin-left: 3px;
-  margin-right: 3px;
-`;
+const FacebookBtnWrap = styled.div``;
 
 export const FacebookShareButton = (props: FacebookShareButtonProps) => {
   const { url = 'https://gameme.netlify.app' } = props;
 
   return (
-    <FacebookBtnWrap id="fb-root">
-      <div
-        className="fb-share-button"
-        data-href={url}
-        data-layout="button"
-        data-size="large"
+    <FacebookBtnWrap
+      className="fb-share-button"
+      data-href={url}
+      data-layout="button"
+      data-size="large"
+    >
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+        className="fb-xfbml-parse-ignore"
       >
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
-          className="fb-xfbml-parse-ignore"
-        >
-          <img src="/images/common/ico-facebook.png" alt="share to facebook" />
-        </a>
-      </div>
+        <img
+          src="/images/common/ico-facebook.png"
+          style={{ width: '100%' }}
+          alt="share to facebook"
+        />
+      </a>
     </FacebookBtnWrap>
+  );
+};
+
+export default (props: ShareButtonsProps) => {
+  const { kakao, line, facebook, className } = props;
+  const { t } = useTranslation();
+
+  return (
+    <div className={className}>
+      <p>
+        <strong>{t('SNS')}</strong>
+      </p>
+      <KakaoShareButton {...kakao} />
+      <LineShareButton {...line} />
+      <div>
+        <FacebookShareButton {...facebook} />
+      </div>
+    </div>
   );
 };
