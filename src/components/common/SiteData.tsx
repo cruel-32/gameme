@@ -108,6 +108,7 @@ export default (props: IThemeProps) => {
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
+        <script src="https://developers.kakao.com/sdk/js/kakao.js" />
         <script src="/js/kakao.js" />
         <script
           src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js"
