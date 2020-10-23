@@ -71,6 +71,9 @@ export const KakaoShareButton = (props: KakaoShareButtonProps) => {
   const shareToKakao = () => {
     const customWin: any = typeof window !== 'undefined' ? window : null;
     if (customWin.Kakao) {
+      if (!customWin.Kakao.isInitialized()) {
+        customWin.Kakao.init('6c7e2a687597c898c1cc7b78baf543df');
+      }
       customWin.Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
@@ -110,12 +113,13 @@ export const LineShareButton = (props: LineShareButtonProps) => {
   const { url = 'https://gameme.netlify.app' } = props;
 
   useEffect(() => {
-    const customWin: any = typeof window !== 'undefined' ? window : null;
-
-    if (customWin.LineIt) {
-      customWin.LineIt.loadButton();
-    }
-  });
+    setTimeout(() => {
+      const customWin: any = typeof window !== 'undefined' ? window : null;
+      if (customWin.LineIt) {
+        customWin.LineIt.loadButton();
+      }
+    }, 0);
+  }, []);
 
   return (
     <div

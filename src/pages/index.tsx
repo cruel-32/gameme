@@ -45,7 +45,11 @@ export default () => {
           {tileData.map((tile) => (
             <GridListTile key={tile.img} className={classes.tile}>
               <a href="/game/findDiff">
-                <img src={tile.img} alt={t(tile.title)} />
+                <img
+                  src={tile.img}
+                  alt={t(tile.title)}
+                  style={{ maxWidth: '100%' }}
+                />
                 <GridListTileBar
                   title={t(tile.title)}
                   subtitle={<span>{t(tile.desc)}</span>}
