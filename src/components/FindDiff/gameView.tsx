@@ -1,16 +1,21 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import delay from 'delay';
 import useSound from 'use-sound';
 import { useTranslation } from 'react-i18next';
+import Button from '@material-ui/core/Button';
 
 import { StateContext, ActionContext } from '@/context/findDiff';
 import { QuizMarker, QuizMarkerProps } from '@/components/FindDiff/quizMarker';
 
 interface IGameImagesProps {
   quizImage: IFindDiffImageData;
-  clickRight(e: React.MouseEvent<HTMLAreaElement, MouseEvent>): void;
-  clickWrong(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
+  clickRight(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
+  clickWrong(e: React.MouseEvent<HTMLImageElement, MouseEvent>): void;
 }
 
 const findParentByClassName = (
@@ -31,80 +36,120 @@ const GameViewWrap = styled.div`
   position: relative;
   .image-wrap > div {
     &:first-child {
+      visibility: visible;
       position: relative;
       z-index: 15;
       top: auto;
       left: auto;
-      blockquote {
-        display: block;
-      }
     }
+    visibility: hidden;
     position: absolute;
     z-index: 14;
     top: 0;
     left: 0;
-    blockquote {
-      display: none;
+  }
+  blockquote {
+    .para {
+      font-size: 20px;
+      line-height: 1.2;
     }
-    area {
-      outline: none;
-      cursor: unset;
+    .cite {
+      display: block;
+      text-decoration: none;
+      font-size: 18px;
+      .name {
+        font-size: 20px;
+      }
+      .text {
+        font-size: 16px;
+        color: #333;
+      }
+    }
+    em {
+      display: block;
+      margin-top: 15px;
+      font-size: 14px;
+      font-style: normal;
     }
   }
 `;
 
 const ImageViewWrap = styled.div`
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  > div {
+    position: relative;
+    z-index: 15;
+    &.left-panel {
+      margin-right: 2px;
+    }
+    &.right-panel {
+      margin-left: 2px;
+    }
+    > img {
+      max-width: 100%;
+    }
+    .diff-point {
+      z-index: 16;
+      position: absolute;
+      outline: none;
+      background: transparent;
+      border: none;
+    }
+  }
 `;
 
-const GameImages = (props: IGameImagesProps) => {
+export const GameImages = (props: IGameImagesProps) => {
   const { quizImage, clickRight, clickWrong } = props;
-  const { img, diffImg, url, coords, description } = quizImage;
+  const { img, diffImg, diffPoints, desc } = quizImage;
 
   return (
     <ImageViewWrap>
-      <button type="button" onClick={clickWrong}>
-        <img src={img} useMap="#points" alt={description} />
-      </button>
-
-      <button type="button" onClick={clickWrong}>
-        <img src={diffImg} useMap="#points" alt={description} />
-      </button>
-      <map name="points">
-        {coords.map((coord) => (
-          <area
-            // eslint-disable-next-line react/no-array-index-key
-            key={url + coord}
-            shape="rect"
-            coords={coord}
+      <div className="left-panel">
+        {diffPoints.map((diffPoint, i) => (
+          <button
+            key={i}
+            type="button"
             onClick={clickRight}
-            href={url}
-            alt={url}
+            className="diff-point"
+            style={diffPoint}
           />
         ))}
-      </map>
+        <img src={img} alt={desc} onClick={clickWrong} />
+      </div>
+
+      <div className="right-panel">
+        {diffPoints.map((diffPoint, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={clickRight}
+            className="diff-point"
+            style={diffPoint}
+          />
+        ))}
+        <img src={diffImg} alt={desc} onClick={clickWrong} />
+      </div>
     </ImageViewWrap>
   );
 };
 
-const GameBlockquote = ({ quizImage }: Pick<IGameImagesProps, 'quizImage'>) => {
+export const GameBlockquote = ({
+  quizImage,
+}: Pick<IGameImagesProps, 'quizImage'>) => {
   const { t } = useTranslation();
 
-  const { description, url, author, tags } = quizImage;
+  const { desc, url, author, tags } = quizImage;
 
   return (
     <blockquote>
-      <p>
-        <strong>{author}</strong>. {t(description)}
-      </p>
-      <cite
-        style={{
-          display: 'block',
-        }}
-      >
-        <a href={url} target="_blank" rel="noreferrer">
-          {url}
-        </a>
+      <p className="para">{t(desc)}</p>
+      <cite className="cite">
+        <Button variant="outlined" color="primary" href={url} target="_blank">
+          <strong className="name">{author}</strong>
+          <span className="text">{t('visitToInsta')}</span>
+        </Button>
       </cite>
       <em>
         {tags.map((tag) => (
@@ -139,7 +184,7 @@ export const GameView = () => {
   });
 
   const clickRight = async (
-    e: React.MouseEvent<HTMLAreaElement, MouseEvent>,
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     const { target, clientX, clientY } = e;
     const parentWrap = findParentByClassName(
@@ -168,7 +213,7 @@ export const GameView = () => {
   };
 
   const clickWrong = async (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>,
   ) => {
     const { target, clientX, clientY } = e;
     const parentWrap = findParentByClassName(

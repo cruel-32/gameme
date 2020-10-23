@@ -2,13 +2,13 @@ export const tileData = [
   {
     img: '/images/findDiff/thumbnail.jpg',
     title: 'findDiff',
-    description: 'findDiffDesc',
+    desc: 'findDiffDesc',
     type: 'tile',
   },
   {
     img: '/images/etc/thumbnail.jpg',
     title: 'etc',
-    description: 'etc',
+    desc: 'etc',
     type: 'tile',
   },
 ];

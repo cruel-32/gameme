@@ -27,7 +27,7 @@ export const reducer = (
         break;
       case 'SET_QUIZ_ROUND':
         draft.round = payload;
-        draft.quizImageData = imageData.slice(payload - 1, payload + 1);
+        draft.quizImageData = draft.imageData.slice(payload - 1, payload + 1);
         break;
       case 'SHUFFLE_IMAGES':
         for (let i = draft.imageData.length - 1; i > 0; i -= 1) {

@@ -45,7 +45,6 @@ export const IntroView = () => {
         src="/images/findDiff/thumbnail.jpg"
         alt={t('findDiff')}
       />
-
       <DescWrap>
         <Button variant="outlined" color="primary" onClick={onStart}>
           {t('findDiff')} START
@@ -56,7 +55,7 @@ export const IntroView = () => {
         kakao={{
           url: 'https://gameme.netlify.app/game/findDiff',
           title: `${t('findDiff')}, ${t('letsTry')}`,
-          description: `${t('description')}`,
+          desc: `${t('desc')}`,
         }}
         line={{
           url: 'https://gameme.netlify.app/game/findDiff',

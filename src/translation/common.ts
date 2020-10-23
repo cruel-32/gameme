@@ -10,6 +10,7 @@ export const ko: Resource = {
     yourScore: '당신의 점수는',
     letsTry: '도전하세요',
     SNS: 'SNS 공유하기',
+    visitToInsta: ' 님의 인스타 방문하기',
   },
 };
 
@@ -23,5 +24,6 @@ export const en: Resource = {
     yourScore: 'Your score is',
     letsTry: "Let's try",
     SNS: 'SNS share',
+    visitToInsta: '. Visit to instagram',
   },
 };

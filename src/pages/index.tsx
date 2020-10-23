@@ -48,7 +48,7 @@ export default () => {
                 <img src={tile.img} alt={t(tile.title)} />
                 <GridListTileBar
                   title={t(tile.title)}
-                  subtitle={<span>{t(tile.description)}</span>}
+                  subtitle={<span>{t(tile.desc)}</span>}
                   actionIcon={
                     <IconButton
                       aria-label={`info about ${t(tile.title)}`}

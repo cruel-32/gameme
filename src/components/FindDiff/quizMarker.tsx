@@ -15,6 +15,7 @@ const MarkerWrap = styled.div<QuizMarkerProps>`
   top: ${({ pos }) => `${pos[1]}px`};
   z-index: 16;
   transform: translate(-50%, -50%);
+  font-size: 30px;
 `;
 
 export const QuizMarker = (props: QuizMarkerProps) => {
@@ -22,7 +23,11 @@ export const QuizMarker = (props: QuizMarkerProps) => {
 
   return (
     <MarkerWrap show={show} pos={pos}>
-      {marker === 'alright' ? <CheckCircleOutline /> : <Close />}
+      {marker === 'alright' ? (
+        <CheckCircleOutline fontSize="large" />
+      ) : (
+        <Close fontSize="large" />
+      )}
     </MarkerWrap>
   );
 };

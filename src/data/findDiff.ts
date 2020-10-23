@@ -1,29 +1,36 @@
 export const imageData: IFindDiffImageData[] = [
   {
-    img: '/images/findDiff/thumbnail.jpg',
-    diffImg: '/images/findDiff/thumbnail.jpg',
-    description: 'findDiffDesc',
-    url: 'https://naver.com',
+    img: '/images/findDiff/s2.ssh.png',
+    diffImg: '/images/findDiff/s2.ssh_diff.png',
+    desc:
+      '아름답네요. 그러나 테스트용 이미지라 곧 지워야합니다. ㅠ ㅠ 지워진 이후에는 그녀의 인스타에서 보세요',
+    url: 'https://www.instagram.com/s2.ssh/?hl=ko',
     tags: ['어쩌구1', '저쩌구1', '하하하1'],
-    author: '아무개',
-    coords: ['0,30,50,60'],
+    author: '서상희',
+    diffPoints: [
+      {
+        top: '79%',
+        left: '86%',
+        width: '8%',
+        height: '10%',
+      },
+    ],
   },
   {
-    img: '/images/findDiff/thumbnail1.jpg',
-    diffImg: '/images/findDiff/thumbnail1.jpg',
-    description: 'findDiffDesc',
-    url: 'https://naver.com',
-    tags: ['어쩌구2', '저쩌구2', '하하하2'],
-    author: '아무개2',
-    coords: ['0,30,50,60'],
-  },
-  {
-    img: '/images/findDiff/thumbnail2.jpg',
-    diffImg: '/images/findDiff/thumbnail2.jpg',
-    description: 'findDiffDesc',
-    url: 'https://naver.com',
-    tags: ['어쩌구3', '저쩌구3', '하하하3'],
-    author: '아무개3',
-    coords: ['0,30,50,60'],
+    img: '/images/findDiff/s2.ssh2.png',
+    diffImg: '/images/findDiff/s2.ssh2_diff.png',
+    desc:
+      '아름답네요. 그러나 테스트용 이미지라 곧 지워야합니다. ㅠ ㅠ 지워진 이후에는 그녀의 인스타에서 보세요',
+    url: 'https://www.instagram.com/s2.ssh/?hl=ko',
+    tags: ['어쩌구1', '저쩌구1', '하하하1'],
+    author: '서상희',
+    diffPoints: [
+      {
+        top: '79%',
+        left: '86%',
+        width: '8%',
+        height: '10%',
+      },
+    ],
   },
 ];
