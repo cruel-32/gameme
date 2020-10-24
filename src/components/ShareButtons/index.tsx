@@ -19,18 +19,22 @@ const FacebookShareButton = React.lazy(() => import('./FacebookShareButton'));
 
 export default (props: ShareButtonsProps) => {
   const { kakao, line, facebook, className } = props;
+  const isCSR = typeof window !== 'undefined';
+
   const { t } = useTranslation();
 
   return (
     <div className={className}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <p>
-          <strong>{t('SNS')}</strong>
-        </p>
-        <KakaoShareButton {...kakao} />
-        <LineShareButton {...line} />
-        <FacebookShareButton {...facebook} />
-      </Suspense>
+      {isCSR && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <p>
+            <strong>{t('SNS')}</strong>
+          </p>
+          <KakaoShareButton {...kakao} />
+          <LineShareButton {...line} />
+          <FacebookShareButton {...facebook} />
+        </Suspense>
+      )}
     </div>
   );
 };
