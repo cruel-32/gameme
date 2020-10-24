@@ -23,10 +23,15 @@ export const StoreProvider = (): [IFindDiffState, IFindDiffAction] => {
         payload,
       });
     },
-    setQuizRound(payload: number) {
+    setRound(payload: number) {
       dispatch({
-        type: 'SET_QUIZ_ROUND',
+        type: 'SET_ROUND',
         payload,
+      });
+    },
+    setQuizImages() {
+      dispatch({
+        type: 'SET_QUIZ_IMAGES',
       });
     },
     shuffleImages() {

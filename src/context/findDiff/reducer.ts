@@ -4,11 +4,11 @@ import produce from 'immer';
 import { imageData } from '@/data/findDiff';
 
 export const initialState: IFindDiffState = {
-  time: 60,
+  time: 30,
   page: 0,
   round: 1,
-  quizImageData: [],
   imageData,
+  quizImageData: [],
 };
 
 export const reducer = (
@@ -25,9 +25,12 @@ export const reducer = (
       case 'SET_TIME':
         draft.time = payload;
         break;
-      case 'SET_QUIZ_ROUND':
+      case 'SET_ROUND':
         draft.round = payload;
-        draft.quizImageData = draft.imageData.slice(payload - 1, payload + 1);
+        break;
+      case 'SET_QUIZ_IMAGES':
+        console.log("draft.round :: ", draft.round)
+        draft.quizImageData = draft.imageData.slice(draft.round - 1, draft.round + 1);
         break;
       case 'SHUFFLE_IMAGES':
         for (let i = draft.imageData.length - 1; i > 0; i -= 1) {
@@ -39,6 +42,8 @@ export const reducer = (
         }
         break;
       default:
+
+
     }
   });
 };

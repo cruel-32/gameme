@@ -35,20 +35,17 @@ const DescWrap = styled.div`
 export const OuttroView = () => {
   const { t } = useTranslation();
   const { round } = useContext(StateContext);
-  const { shuffleImages, setQuizRound, setPage } = useContext(ActionContext);
+  const { setRound, setPage, shuffleImages } = useContext(ActionContext);
   const [playStart] = useSound('/sounds/findDiff/start.mp3');
   const [grade, setGrade] = useState(1);
 
   const onStart = async () => {
+    shuffleImages();
     playStart();
     await delay(1000);
-    setQuizRound(1);
+    setRound(1);
     setPage(1);
   };
-
-  useEffect(() => {
-    shuffleImages();
-  }, []);
 
   useEffect(() => {
     if (round > 55) {

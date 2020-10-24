@@ -9,12 +9,13 @@ declare interface IFindDiffState {
 declare interface IFindDiffAction {
   setPage(page: number);
   setTime(time: number);
-  setQuizRound(number: number);
+  setRound(number: number);
+  setQuizImages();
   shuffleImages();
 }
 
 declare interface IFindDiffActionPayload {
-  type: 'SET_PAGE' | 'SET_TIME' | 'SET_QUIZ_ROUND' | 'SHUFFLE_IMAGES';
+  type: 'SET_PAGE' | 'SET_TIME' | 'SET_ROUND' | 'SET_QUIZ_IMAGES' | 'SHUFFLE_IMAGES';
   payload?: any;
 }
 

@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 import { StateContext, ActionContext } from '@/context/findDiff';
 import { QuizMarker, QuizMarkerProps } from '@/components/FindDiff/quizMarker';
 
-interface IGameImagesProps {
+interface IGameImageProps {
   quizImage: IFindDiffImageData;
   clickRight(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
   clickWrong(e: React.MouseEvent<HTMLImageElement, MouseEvent>): void;
@@ -34,20 +34,6 @@ const findParentByClassName = (
 const GameViewWrap = styled.div`
   text-align: center;
   position: relative;
-  .image-wrap > div {
-    &:first-child {
-      visibility: visible;
-      position: relative;
-      z-index: 15;
-      top: auto;
-      left: auto;
-    }
-    visibility: hidden;
-    position: absolute;
-    z-index: 14;
-    top: 0;
-    left: 0;
-  }
   blockquote {
     .para {
       font-size: 20px;
@@ -100,7 +86,7 @@ const ImageViewWrap = styled.div`
   }
 `;
 
-export const GameImages = (props: IGameImagesProps) => {
+export const GameImage = (props: IGameImageProps) => {
   const { quizImage, clickRight, clickWrong } = props;
   const { img, diffImg, diffPoints, description } = quizImage;
 
@@ -137,7 +123,7 @@ export const GameImages = (props: IGameImagesProps) => {
 
 export const GameBlockquote = ({
   quizImage,
-}: Pick<IGameImagesProps, 'quizImage'>) => {
+}: Pick<IGameImageProps, 'quizImage'>) => {
   const { t } = useTranslation();
 
   const { description, url, author, tags } = quizImage;
@@ -173,7 +159,7 @@ export const GameBlockquote = ({
 export const GameView = () => {
   const { quizImageData } = useContext(StateContext);
   const { round } = useContext(StateContext);
-  const { setQuizRound } = useContext(ActionContext);
+  const { setRound } = useContext(ActionContext);
   const [playGood, { stop: stopGood }] = useSound('/sounds/findDiff/good.mp3');
   const [playBad, { stop: stopBad }] = useSound('/sounds/findDiff/bad.mp3');
 
@@ -210,7 +196,7 @@ export const GameView = () => {
         ...newMarkerOpt,
         show: false,
       });
-      setQuizRound(round + 1);
+      setRound(round + 1);
     }
   };
 
@@ -248,15 +234,16 @@ export const GameView = () => {
     <GameViewWrap>
       <QuizMarker {...markerOpt} />
       <div className="image-wrap">
-        {quizImageData.map((quizImage) => (
-          <GameImages
-            key={quizImage.img}
-            quizImage={quizImage}
-            clickRight={clickRight}
-            clickWrong={clickWrong}
-          />
-        ))}
-        {quizImageData[0] && <GameBlockquote quizImage={quizImageData[0]} />}
+        {quizImageData[0] &&
+          <>
+            <GameImage
+              quizImage={quizImageData[0]}
+              clickRight={clickRight}
+              clickWrong={clickWrong}
+            />
+            <GameBlockquote quizImage={quizImageData[0]}/>
+          </>
+        }
       </div>
     </GameViewWrap>
   );

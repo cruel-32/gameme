@@ -17,23 +17,15 @@ const DescWrap = styled.div`
 
 export const IntroView = () => {
   const { t } = useTranslation();
-  const { imageData } = useContext(StateContext);
-  const { setPage, shuffleImages, setQuizRound } = useContext(ActionContext);
+  const { setPage, setRound } = useContext(ActionContext);
   const [playStart] = useSound('/sounds/findDiff/start.mp3');
 
   const onStart = async () => {
     playStart();
     await delay(1000);
     setPage(1);
+    setRound(1);
   };
-
-  useEffect(() => {
-    shuffleImages();
-  }, []);
-
-  useEffect(() => {
-    setQuizRound(1);
-  }, [imageData]);
 
   return (
     <IntroViewWrap>
