@@ -48,7 +48,7 @@ export default () => {
                 <img
                   src={tile.img}
                   alt={t(tile.title)}
-                  style={{ maxWidth: '100%' }}
+                  style={{ maxWidth: '100%', width: '100%' }}
                 />
                 <GridListTileBar
                   title={t(tile.title)}
