@@ -22,7 +22,7 @@ export default (props: LineShareButtonProps) => {
     if (customWin.LineIt) {
       customWin.LineIt.loadButton();
     }
-  });
+  }, []);
 
   return (
     <div
