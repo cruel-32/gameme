@@ -26,10 +26,10 @@ export const imageData: IFindDiffImageData[] = [
     author: 's2.ssh',
     diffPoints: [
       {
-        top: '79%',
-        left: '86%',
-        width: '8%',
-        height: '10%',
+        top: '38%',
+        left: '4%',
+        width: '11%',
+        height: '7%',
       },
     ],
   },
@@ -43,10 +43,10 @@ export const imageData: IFindDiffImageData[] = [
     author: 's2.ssh',
     diffPoints: [
       {
-        top: '79%',
-        left: '86%',
-        width: '8%',
-        height: '10%',
+        top: '86%',
+        left: '25%',
+        width: '10%',
+        height: '7%',
       },
     ],
   },
@@ -60,10 +60,10 @@ export const imageData: IFindDiffImageData[] = [
     author: 's2.ssh',
     diffPoints: [
       {
-        top: '79%',
-        left: '86%',
-        width: '8%',
-        height: '10%',
+        top: '24%',
+        left: '76%',
+        width: '19%',
+        height: '8%',
       },
     ],
   },
@@ -77,9 +77,9 @@ export const imageData: IFindDiffImageData[] = [
     author: 's2.ssh',
     diffPoints: [
       {
-        top: '79%',
-        left: '86%',
-        width: '8%',
+        top: '65%',
+        left: '83%',
+        width: '13%',
         height: '10%',
       },
     ],
@@ -94,10 +94,10 @@ export const imageData: IFindDiffImageData[] = [
     author: 'e.yoonjin',
     diffPoints: [
       {
-        top: '79%',
-        left: '86%',
-        width: '8%',
-        height: '10%',
+        top: '37%',
+        left: '83%',
+        width: '13%',
+        height: '9%',
       },
     ],
   },
@@ -111,9 +111,9 @@ export const imageData: IFindDiffImageData[] = [
     author: 's0on_ho',
     diffPoints: [
       {
-        top: '79%',
-        left: '86%',
-        width: '8%',
+        top: '90%',
+        left: '69%',
+        width: '6%',
         height: '10%',
       },
     ],

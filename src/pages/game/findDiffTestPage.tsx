@@ -1,21 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FindDiff } from '@/components/FindDiff';
 import { StoreProvider, StateContext, ActionContext } from '@/context/findDiff';
 import SiteData from '@/components/common/SiteData';
-
-const FindDiffWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-`;
+import { GameView } from '@/components/FindDiff/gameView';
 
 export default () => {
   const [store, actions] = StoreProvider();
   const { t } = useTranslation();
+  useEffect(() => {
+    actions.setPage(1);
+    actions.setRound(1);
+    actions.setQuizImages();
+  }, []);
 
   return (
     <StateContext.Provider value={store}>
@@ -24,9 +20,11 @@ export default () => {
           title={`${t('sitename')}::${t('findDiff')}`}
           description={t('findDiffDesc')}
         >
-          <FindDiffWrap>
-            <FindDiff />
-          </FindDiffWrap>
+          <>
+            <h1>왜 안보여</h1>
+            <GameView />
+            {store.quizImageData[0]?.img}
+          </>
         </SiteData>
       </ActionContext.Provider>
     </StateContext.Provider>

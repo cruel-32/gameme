@@ -234,16 +234,16 @@ export const GameView = () => {
     <GameViewWrap>
       <QuizMarker {...markerOpt} />
       <div className="image-wrap">
-        {quizImageData[0] &&
+        {quizImageData?.[0] && (
           <>
             <GameImage
               quizImage={quizImageData[0]}
               clickRight={clickRight}
               clickWrong={clickWrong}
             />
-            <GameBlockquote quizImage={quizImageData[0]}/>
+            <GameBlockquote quizImage={quizImageData[0]} />
           </>
-        }
+        )}
       </div>
     </GameViewWrap>
   );

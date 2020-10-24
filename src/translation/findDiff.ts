@@ -2,9 +2,11 @@ import { Resource } from 'i18next';
 
 export const ko: Resource = {
   translation: {
-    findDiff: '틀린그림찾기',
+    findDiff: '틀린 그림 찾기',
     findDiffDesc: '60초 동안 틀린 그림을 최대한 많이 찾아보세요',
     seconds: '초',
+    yourFriend1: '당신의 친구의 점수는',
+    yourFriend2: '이네요! 당신이 한번 발라주세요!',
     findDiffGrade1: '인정합니다. 당신은 틀린그림찾기의 신입니다!!',
     findDiffGrade2: '와우! 현미경이세요? 프로시네요!',
     findDiffGrade3: '오! 혹시 몽골인? 잘 찾네요!',
@@ -20,6 +22,8 @@ export const en: Resource = {
     findDiff: 'The find differences game',
     findDiffDesc: 'Find as many differences as possible in 60 seconds',
     seconds: 'sec',
+    yourFriend1: 'Your friend scored',
+    yourFriend2: '! You can break it!',
     findDiffGrade1: 'Perfect! Surely you are the god of this game',
     findDiffGrade2: 'Wow very good! Are you professional gamer?',
     findDiffGrade3: 'Good! You look very well',

@@ -29,8 +29,10 @@ export const reducer = (
         draft.round = payload;
         break;
       case 'SET_QUIZ_IMAGES':
-        console.log("draft.round :: ", draft.round)
-        draft.quizImageData = draft.imageData.slice(draft.round - 1, draft.round + 1);
+        draft.quizImageData = draft.imageData.slice(
+          draft.round - 1,
+          draft.round + 1,
+        );
         break;
       case 'SHUFFLE_IMAGES':
         for (let i = draft.imageData.length - 1; i > 0; i -= 1) {
@@ -42,8 +44,6 @@ export const reducer = (
         }
         break;
       default:
-
-
     }
   });
 };
