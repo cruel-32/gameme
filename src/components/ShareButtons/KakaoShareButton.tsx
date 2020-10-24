@@ -40,7 +40,10 @@ export default (props: KakaoShareButtonProps) => {
   const shareToKakao = () => {
     const customWin: any = typeof window !== 'undefined' ? window : null;
     if (customWin?.Kakao) {
-      customWin?.Kakao.Link.sendDefault({
+      if(!customWin?.Kakao?.isInitialized()){
+        customWin?.Kakao?.init('6c7e2a687597c898c1cc7b78baf543df');
+      }
+      customWin?.Kakao?.Link?.sendDefault({
         objectType: 'feed',
         content: {
           title,

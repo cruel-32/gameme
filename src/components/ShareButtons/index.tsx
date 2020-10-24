@@ -24,7 +24,7 @@ export default (props: ShareButtonsProps) => {
   const { t } = useTranslation();
 
   return (
-    <div className={className}>
+    <div className={className} style={{textAlign:'center'}}>
       {isCSR && (
         <Suspense fallback={<div>Loading...</div>}>
           <p>

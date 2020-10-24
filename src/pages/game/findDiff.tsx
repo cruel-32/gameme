@@ -20,7 +20,7 @@ export default () => {
   return (
     <StateContext.Provider value={store}>
       <ActionContext.Provider value={actions}>
-        <SiteData title={`${t('sitename')}::${t('findDiff')}`}>
+        <SiteData title={`${t('sitename')}::${t('findDiff')}`} description={t('findDiffDesc')}>
           <FindDiffWrap>
             <FindDiff />
           </FindDiffWrap>

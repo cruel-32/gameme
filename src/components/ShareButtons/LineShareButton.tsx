@@ -34,7 +34,7 @@ export default (props: LineShareButtonProps) => {
     const customWin: any = typeof window !== 'undefined' ? window : null;
 
     if (customWin?.LineIt && !ref.current.querySelector('iframe')) {
-      customWin?.LineIt.loadButton();
+      customWin?.LineIt?.loadButton();
     }
   }, []);
 
