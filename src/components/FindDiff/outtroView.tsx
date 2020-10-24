@@ -53,19 +53,19 @@ export const OuttroView = () => {
 
   useEffect(() => {
     if (round > 55) {
-      setGrade(7);
+      setGrade(1);
     } else if (round > 40 && round <= 55) {
-      setGrade(6);
+      setGrade(2);
     } else if (round > 27 && round <= 40) {
-      setGrade(5);
+      setGrade(3);
     } else if (round > 17 && round <= 27) {
       setGrade(4);
     } else if (round > 10 && round <= 17) {
-      setGrade(3);
+      setGrade(5);
     } else if (round > 5 && round <= 10) {
-      setGrade(2);
+      setGrade(6);
     } else if (round <= 5) {
-      setGrade(1);
+      setGrade(7);
     }
   }, [round]);
 
@@ -76,7 +76,7 @@ export const OuttroView = () => {
           {t('findDiff')} <br /> {t('yourScore')}
         </span>
         <strong>{round - 1}</strong>
-        <p>{`${t(`grade${grade}`)}.`}</p>
+        <p>{`${t(`grade${grade}`)}. ${t(`findDiffGrade${grade}`)}.`}</p>
       </div>
 
       <DescWrap>
