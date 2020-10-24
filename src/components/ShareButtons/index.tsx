@@ -31,8 +31,10 @@ export default (props: ShareButtonsProps) => {
             <strong>{t('SNS')}</strong>
           </p>
           <KakaoShareButton {...kakao} />
-          {/* <LineShareButton {...line} /> */}
-          <FacebookShareButton {...facebook} />
+          <LineShareButton {...line} />
+          <div>
+            <FacebookShareButton {...facebook} />
+          </div>
         </Suspense>
       )}
     </div>
