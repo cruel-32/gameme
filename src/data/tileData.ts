@@ -5,10 +5,10 @@ export const tileData = [
     description: 'findDiffDesc',
     type: 'tile',
   },
-  {
-    img: '/images/etc/thumbnail.jpg',
-    title: 'etc',
-    description: 'etc',
-    type: 'tile',
-  },
+  // {
+  //   img: '/images/etc/thumbnail.jpg',
+  //   title: 'etc',
+  //   description: 'etc',
+  //   type: 'tile',
+  // },
 ];

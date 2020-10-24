@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useTranslation } from 'react-i18next';
 import { FindDiff } from '@/components/FindDiff';
 import { StoreProvider, StateContext, ActionContext } from '@/context/findDiff';
 import SiteData from '@/components/common/SiteData';
@@ -15,11 +15,12 @@ const FindDiffWrap = styled.div`
 
 export default () => {
   const [store, actions] = StoreProvider();
+  const { t } = useTranslation();
 
   return (
     <StateContext.Provider value={store}>
       <ActionContext.Provider value={actions}>
-        <SiteData>
+        <SiteData title={`${t('sitename')}::${t('findDiff')}`}>
           <FindDiffWrap>
             <FindDiff />
           </FindDiffWrap>

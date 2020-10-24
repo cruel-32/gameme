@@ -90,7 +90,7 @@ export default (props: IThemeProps) => {
   const {
     children,
     theme = defaultTheme,
-    title = t('sitename'),
+    title = `${t('welcome')}`,
     description = t('welcome'),
   } = props;
 
@@ -99,7 +99,6 @@ export default (props: IThemeProps) => {
       <Helmet defer={false}>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <title>메인</title>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

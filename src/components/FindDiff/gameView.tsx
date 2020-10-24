@@ -186,58 +186,62 @@ export const GameView = () => {
   const clickRight = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
-    const { target, clientX, clientY } = e;
-    const parentWrap = findParentByClassName(
-      'image-wrap',
-      target as HTMLElement,
-    );
-    const rect = parentWrap.getBoundingClientRect();
-    const x = clientX - rect.left; // x position within the element.
-    const y = clientY - rect.top; // y position within the element.
+    if (!markerOpt.show) {
+      const { target, clientX, clientY } = e;
+      const parentWrap = findParentByClassName(
+        'image-wrap',
+        target as HTMLElement,
+      );
+      const rect = parentWrap.getBoundingClientRect();
+      const x = clientX - rect.left; // x position within the element.
+      const y = clientY - rect.top; // y position within the element.
 
-    e.preventDefault();
-    const newMarkerOpt: QuizMarkerProps = {
-      pos: [x, y],
-      show: true,
-      marker: 'alright',
-    };
-    setMarkerOpt(newMarkerOpt);
-    stopGood();
-    playGood();
-    await delay(1000);
-    setMarkerOpt({
-      ...newMarkerOpt,
-      show: false,
-    });
-    setQuizRound(round + 1);
+      e.preventDefault();
+      const newMarkerOpt: QuizMarkerProps = {
+        pos: [x, y],
+        show: true,
+        marker: 'alright',
+      };
+      setMarkerOpt(newMarkerOpt);
+      stopGood();
+      playGood();
+      await delay(1000);
+      setMarkerOpt({
+        ...newMarkerOpt,
+        show: false,
+      });
+      setQuizRound(round + 1);
+    }
   };
 
   const clickWrong = async (
     e: React.MouseEvent<HTMLImageElement, MouseEvent>,
   ) => {
-    const { target, clientX, clientY } = e;
-    const parentWrap = findParentByClassName(
-      'image-wrap',
-      target as HTMLElement,
-    );
-    const rect = parentWrap.getBoundingClientRect();
-    const x = clientX - rect.left; // x position within the element.
-    const y = clientY - rect.top; // y position within the element.
+    if (!markerOpt.show) {
+      const { target, clientX, clientY } = e;
+      const parentWrap = findParentByClassName(
+        'image-wrap',
+        target as HTMLElement,
+      );
+      const rect = parentWrap.getBoundingClientRect();
+      const x = clientX - rect.left; // x position within the element.
+      const y = clientY - rect.top; // y position within the element.
 
-    e.preventDefault();
-    const newMarkerOpt: QuizMarkerProps = {
-      pos: [x, y],
-      show: true,
-      marker: 'wrong',
-    };
-    setMarkerOpt(newMarkerOpt);
-    stopBad();
-    playBad();
-    await delay(500);
-    setMarkerOpt({
-      ...newMarkerOpt,
-      show: false,
-    });
+      e.preventDefault();
+      const newMarkerOpt: QuizMarkerProps = {
+        pos: [x, y],
+        show: true,
+        marker: 'wrong',
+      };
+      setMarkerOpt(newMarkerOpt);
+      stopBad();
+      playBad();
+      await delay(500);
+      setMarkerOpt({
+        ...newMarkerOpt,
+        show: false,
+      });
+    }
   };
 
   return (

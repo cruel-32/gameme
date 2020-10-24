@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import delay from 'delay';
 import Button from '@material-ui/core/Button';
@@ -15,6 +15,7 @@ const OuttroWrap = styled.div`
     .tit {
       font-size: 32px;
       text-align: center;
+      line-height: 1.2;
     }
     strong {
       display: block;
@@ -37,6 +38,7 @@ export const OuttroView = () => {
   const { round } = useContext(StateContext);
   const { shuffleImages, setQuizRound, setPage } = useContext(ActionContext);
   const [playStart] = useSound('/sounds/findDiff/start.mp3');
+  const [grade, setGrade] = useState(1);
 
   const onStart = async () => {
     playStart();
@@ -49,6 +51,24 @@ export const OuttroView = () => {
     shuffleImages();
   }, []);
 
+  useEffect(() => {
+    if (round > 55) {
+      setGrade(7);
+    } else if (round > 40 && round <= 55) {
+      setGrade(6);
+    } else if (round > 27 && round <= 40) {
+      setGrade(5);
+    } else if (round > 17 && round <= 27) {
+      setGrade(4);
+    } else if (round > 10 && round <= 17) {
+      setGrade(3);
+    } else if (round > 5 && round <= 10) {
+      setGrade(2);
+    } else if (round <= 5) {
+      setGrade(1);
+    }
+  }, [round]);
+
   return (
     <OuttroWrap>
       <div className="score-board">
@@ -56,7 +76,7 @@ export const OuttroView = () => {
           {t('findDiff')} <br /> {t('yourScore')}
         </span>
         <strong>{round - 1}</strong>
-        <p>정말 어림없는 점수군요</p>
+        <p>{`${t(`grade${grade}`)}.`}</p>
       </div>
 
       <DescWrap>
