@@ -98,7 +98,12 @@ export default (props: IThemeProps) => {
     <ThemeProvider theme={theme}>
       <Helmet defer={false}>
         <title>{title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={description} />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/purecss@1.0.1/build/base-min.css"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
