@@ -24,9 +24,9 @@ export const QuizMarker = (props: QuizMarkerProps) => {
   return (
     <MarkerWrap show={show} pos={pos}>
       {marker === 'alright' ? (
-        <CheckCircleOutline fontSize="large" />
+        <CheckCircleOutline fontSize="large" style={{color:'green'}}/>
       ) : (
-        <Close fontSize="large" />
+        <Close fontSize="large" style={{ color: 'red' }} />
       )}
     </MarkerWrap>
   );

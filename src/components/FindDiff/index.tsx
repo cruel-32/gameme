@@ -56,7 +56,7 @@ export const FindDiff = () => {
         setTime(time - 1);
       } else {
         playEnd();
-        setTime(30);
+        setTime(60);
         setPage(2);
       }
     },

@@ -4,7 +4,7 @@ import produce from 'immer';
 import { imageData } from '@/data/findDiff';
 
 export const initialState: IFindDiffState = {
-  time: 30,
+  time: 60,
   page: 0,
   round: 1,
   imageData,
