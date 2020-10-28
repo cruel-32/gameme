@@ -44,7 +44,7 @@ export default () => {
           </GridListTile>
           {tileData.map((tile) => (
             <GridListTile key={tile.img} className={classes.tile}>
-              <a href="/game/findDiff">
+              <a href={tile.url}>
                 <img
                   src={tile.img}
                   alt={t(tile.title)}

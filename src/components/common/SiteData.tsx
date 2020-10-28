@@ -111,14 +111,8 @@ export default (props: IThemeProps) => {
         />
         <script src="https://developers.kakao.com/sdk/js/kakao.js" />
         <script src="/js/kakao.js" />
+        <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" />
         <script
-          src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js"
-          async
-          defer
-        />
-        <script
-          async
-          defer
           crossOrigin="anonymous"
           src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v8.0"
           nonce="p7szCzSF"

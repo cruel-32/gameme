@@ -36,7 +36,7 @@ export default (props: LineShareButtonProps) => {
     if (customWin?.LineIt && !ref.current.querySelector('iframe')) {
       customWin?.LineIt?.loadButton();
     }
-  }, []);
+  });
 
   return (
     <LineBtnWrap ref={ref}>

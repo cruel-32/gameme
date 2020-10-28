@@ -1,8 +1,9 @@
 import { Resource } from 'i18next';
 import * as common from './common';
 import * as findDiff from './findDiff';
+import * as whoIsThis from './whoIsThis';
 
-const dataList = [common, findDiff];
+const dataList = [common, findDiff, whoIsThis];
 export const resources: {
   ko: Resource;
   en: Resource;
