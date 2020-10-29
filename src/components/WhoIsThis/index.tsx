@@ -7,6 +7,8 @@ import StatusBoard from '@/components/StatusBoard';
 import Timer from '@/components/Timer';
 import { useTranslation } from 'react-i18next';
 import Sharebuttons from '@/components/ShareButtons';
+import { IntroView } from './introView';
+import { GameView } from './gameView';
 
 const Divider = styled.div`
   margin: 10px 0;
@@ -66,6 +68,9 @@ export const WhoIsThis = () => {
           <Timer time={time} />
         </Divider>
       )}
+      {page === 0 && <IntroView />}
+      {/* {page === 1 && <GameView />} */}
+      <GameView />
       <Sharebuttons
         kakao={{
           url: 'https://gameme.netlify.app/game/whoIsThis',

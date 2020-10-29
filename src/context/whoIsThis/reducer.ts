@@ -31,7 +31,7 @@ export const reducer = (
       case 'SET_QUIZ_IMAGES':
         draft.quizImageData = draft.imageData.slice(
           draft.round - 1,
-          draft.round + 1,
+          draft.round,
         );
         break;
       case 'SHUFFLE_IMAGES':
