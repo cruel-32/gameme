@@ -57,7 +57,7 @@ export const GameView = () => {
       {img && (
         <div>
           <div className="quiz-image">
-            {img && <img src={img} alt={description} />}
+            {img && <img src={`${img}.jpg`} alt={description} />}
           </div>
           <div className="button-wrap">
             <p>이 사람은 누구일까요?</p>
