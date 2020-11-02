@@ -87,21 +87,16 @@ export const GameView = () => {
         console.log('imgRef.current?.height ::', imgRef.current?.height);
 
         const pixelArr = ctx.getImageData(0, 0, w, h).data;
-        const sampleSize = 50;
+        const sampleSize = 10;
 
         for (let y = 0; y < h; y += sampleSize) {
+          console.log('y : ', y);
           for (let x = 0; x < w; x += sampleSize) {
+            console.log('x : ', x);
             const p = (x + y * w) * 4;
             ctx.fillStyle = `rgba(${pixelArr[p]},${pixelArr[p + 1]}, ${
               pixelArr[p + 2]
             }, ${pixelArr[p + 3]})`;
-
-            console.log(
-              'test :::::',
-              `rgba("${pixelArr[p]},${pixelArr[p + 1]}, ${pixelArr[p + 2]}, ${
-                pixelArr[p + 3]
-              }")`,
-            );
             ctx.fillRect(x, y, sampleSize, sampleSize);
           }
         }
