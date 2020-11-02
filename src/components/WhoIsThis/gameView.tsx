@@ -87,7 +87,7 @@ export const GameView = () => {
         console.log('imgRef.current?.height ::', imgRef.current?.height);
 
         const pixelArr = ctx.getImageData(0, 0, w, h).data;
-        const sampleSize = 10;
+        const sampleSize = 4;
 
         for (let y = 0; y < h; y += sampleSize) {
           console.log('y : ', y);
