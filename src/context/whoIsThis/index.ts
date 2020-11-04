@@ -23,6 +23,12 @@ export const StoreProvider = (): [IWhoIsThisState, IWhoIsThisAction] => {
         payload,
       });
     },
+    setScore(payload: number) {
+      dispatch({
+        type: 'SET_SCORE',
+        payload,
+      });
+    },
     setRound(payload: number) {
       dispatch({
         type: 'SET_ROUND',

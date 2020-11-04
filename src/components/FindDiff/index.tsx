@@ -21,7 +21,6 @@ const Preview = styled.div`
   width: 1px;
   height: 1px;
   position: absolute;
-  visibility: hidden;
   > img {
     width: 100%;
   }
@@ -81,6 +80,12 @@ export const FindDiff = () => {
           <Timer time={time} />
         </Divider>
       )}
+      {quizImageData.map((quizImage) => (
+        <Preview key={quizImage.img}>
+          <img src={quizImage.img} alt={quizImage.description} />
+          <img src={quizImage.diffImg} alt={quizImage.description} />
+        </Preview>
+      ))}
       {page === 0 && <IntroView />}
       {page === 1 && <GameView />}
       {page === 2 && <OuttroView />}
@@ -89,12 +94,6 @@ export const FindDiff = () => {
         imageData : {imageData.map((img) => img.img).join(' === ')}<br/>
         quizImageData : {quizImageData.map((img) => img.img).join(' === ')}<br/>
       </div> */}
-      {quizImageData.map((quizImage) => (
-        <Preview key={quizImage.img}>
-          <img src={quizImage.img} alt={quizImage.description} />
-          <img src={quizImage.diffImg} alt={quizImage.description} />
-        </Preview>
-      ))}
       <Sharebuttons
         kakao={{
           url: 'https://gameme.netlify.app/game/findDiff',

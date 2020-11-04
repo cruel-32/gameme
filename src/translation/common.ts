@@ -2,6 +2,7 @@ import { Resource } from 'i18next';
 
 export const ko: Resource = {
   translation: {
+    score: '점',
     welcome: '게임밈에 오신 것을 환영합니다',
     gameList: '게임 목록',
     loading: '로딩중',
@@ -23,6 +24,7 @@ export const ko: Resource = {
 
 export const en: Resource = {
   translation: {
+    score: 'score',
     welcome: 'Welcome to the Gameme',
     gameList: 'Game list',
     loading: 'Loading',

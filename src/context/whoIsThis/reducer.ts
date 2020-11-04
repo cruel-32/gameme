@@ -6,6 +6,7 @@ import { imageData } from '@/data/whoIsThis';
 export const initialState: IWhoIsThisState = {
   time: 60,
   page: 0,
+  score: 0,
   round: 1,
   imageData,
   quizImageData: [],
@@ -25,13 +26,16 @@ export const reducer = (
       case 'SET_TIME':
         draft.time = payload;
         break;
+      case 'SET_SCORE':
+        draft.score = payload;
+        break;
       case 'SET_ROUND':
         draft.round = payload;
         break;
       case 'SET_QUIZ_IMAGES':
         draft.quizImageData = draft.imageData.slice(
           draft.round - 1,
-          draft.round,
+          draft.round + 1,
         );
         break;
       case 'SHUFFLE_IMAGES':

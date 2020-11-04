@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useContext, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import useSound from 'use-sound';
@@ -5,10 +6,12 @@ import { StateContext, ActionContext } from '@/context/whoIsThis';
 import { useInterval } from '@/hooks/useInterval';
 import StatusBoard from '@/components/StatusBoard';
 import Timer from '@/components/Timer';
+import Score from '@/components/Score';
 import { useTranslation } from 'react-i18next';
 import Sharebuttons from '@/components/ShareButtons';
 import { IntroView } from './introView';
 import { GameView } from './gameView';
+import { OuttroView } from './outtroView';
 
 const Divider = styled.div`
   margin: 10px 0;
@@ -16,8 +19,18 @@ const Divider = styled.div`
   justify-content: space-around;
 `;
 
+const Preview = styled.div`
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  > img {
+    width: 100%;
+  }
+`;
 export const WhoIsThis = () => {
-  const { page, time, round, imageData } = useContext(StateContext);
+  const { score, page, time, round, imageData, quizImageData } = useContext(
+    StateContext,
+  );
   const { shuffleImages, setTime, setPage, setQuizImages } = useContext(
     ActionContext,
   );
@@ -66,11 +79,23 @@ export const WhoIsThis = () => {
         <Divider>
           <StatusBoard round={round} />
           <Timer time={time} />
+          <Score score={score} />
         </Divider>
       )}
+      {quizImageData.map((quizImage, i) => (
+        <Preview key={quizImage.img}>
+          {[4, 3, 2, 1, 0].map((item, j) => (
+            <img
+              key={i + j}
+              src={`${quizImage.img}_${item}.jpg`}
+              alt={quizImage.description}
+            />
+          ))}
+        </Preview>
+      ))}
       {page === 0 && <IntroView />}
-      {/* {page === 1 && <GameView />} */}
-      <GameView />
+      {page === 1 && <GameView />}
+      {page === 2 && <OuttroView />}
       <Sharebuttons
         kakao={{
           url: 'https://gameme.netlify.app/game/whoIsThis',
