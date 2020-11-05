@@ -15,13 +15,19 @@ declare interface IFindDiffAction {
 }
 
 declare interface IFindDiffActionPayload {
-  type: 'SET_PAGE' | 'SET_TIME' | 'SET_ROUND' | 'SET_QUIZ_IMAGES' | 'SHUFFLE_IMAGES';
+  type:
+    | 'SET_PAGE'
+    | 'SET_TIME'
+    | 'SET_ROUND'
+    | 'SET_QUIZ_IMAGES'
+    | 'SHUFFLE_IMAGES';
   payload?: any;
 }
 
 declare interface IFindDiffImageData {
   img: string;
   diffImg: string;
+  introduce: string;
   description: string;
   author: string;
   url: string;

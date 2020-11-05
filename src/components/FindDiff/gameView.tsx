@@ -35,8 +35,12 @@ const GameViewWrap = styled.div`
   text-align: center;
   position: relative;
   blockquote {
-    .para {
+    .title {
       font-size: 20px;
+      line-height: 1.2;
+    }
+    .para {
+      font-size: 16px;
       line-height: 1.2;
     }
     .cite {
@@ -75,6 +79,7 @@ const ImageViewWrap = styled.div`
     }
     > img {
       max-width: 100%;
+      cursor: pointer;
     }
     .diff-point {
       z-index: 16;
@@ -126,10 +131,11 @@ export const GameBlockquote = ({
 }: Pick<IGameImageProps, 'quizImage'>) => {
   const { t } = useTranslation();
 
-  const { description, url, author, tags } = quizImage;
+  const { introduce, description, url, author, tags } = quizImage;
 
   return (
     <blockquote>
+      <h1 className="title">{t(introduce)}</h1>
       <p className="para">{t(description)}</p>
       <cite className="cite">
         <Button variant="outlined" color="primary" href={url} target="_blank">
