@@ -3,7 +3,8 @@ import { Resource } from 'i18next';
 export const ko: Resource = {
   translation: {
     findDiff: '관찰력 테스트',
-    findDiffDesc: '60초 동안 틀린 그림을 최대한 많이 찾아보세요',
+    findDiffDesc:
+      '어디가 다를까요? 60초 동안 틀린 그림을 최대한 많이 찾아보세요',
     seconds: '초',
     yourFriend1: '당신의 친구의 점수는',
     yourFriend2: '이네요! 당신이 한번 발라주세요!',

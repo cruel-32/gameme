@@ -12,6 +12,9 @@ import { useInterval } from '@/hooks/useInterval';
 const GameViewWrap = styled.div`
   text-align: center;
   position: relative;
+  .para {
+    font-size: 16px;
+  }
   .quiz-image {
     position: relative;
     margin: 0 auto;
@@ -29,9 +32,9 @@ const GameViewWrap = styled.div`
     }
   }
   .button-wrap {
-    margin-top: 20px;
+    margin: 20px 30px 0 30px;
     button {
-      margin: 0 2px;
+      margin: 2px 2px;
     }
   }
 `;
@@ -91,7 +94,7 @@ export const GameView = () => {
             ))}
           </div>
           <div className="button-wrap">
-            <p>이 사람은 누구일까요?</p>
+            <p className="para">이 사람은 누구일까요?</p>
             {examples.map((example, i) => (
               <Button
                 onClick={() => clickExample(i)}
