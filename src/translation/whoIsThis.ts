@@ -2,9 +2,9 @@ import { Resource } from 'i18next';
 
 export const ko: Resource = {
   translation: {
-    whoIsThis: '눈썰미 테스트 :: 연예인 맞추기',
+    whoIsThis: '눈썰미 테스트',
     whoIsThisDesc:
-      '당신의 눈썰미를 테스트합니다. 60초 동안 다음 사람을 최대한 많이 맞춰보세요',
+      '당신의 눈썰미를 테스트합니다. 60초 동안 연예인을 최대한 많이 맞춰보세요',
     seconds: '초',
     yourFriend1: '당신의 친구의 점수는',
     yourFriend2: '이네요! 당신이 한번 발라주세요!',

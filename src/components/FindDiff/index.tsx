@@ -96,15 +96,15 @@ export const FindDiff = () => {
       </div> */}
       <Sharebuttons
         kakao={{
-          url: 'https://gameme.netlify.app/game/findDiff',
+          url: 'https://tegame.netlify.app/game/findDiff',
           title: `${t('findDiff')}, ${t('letsTry')}`,
           description,
         }}
         line={{
-          url: 'https://gameme.netlify.app/game/findDiff',
+          url: 'https://tegame.netlify.app/game/findDiff',
         }}
         facebook={{
-          url: 'https://gameme.netlify.app/game/findDiff',
+          url: 'https://tegame.netlify.app/game/findDiff',
         }}
       />
     </div>

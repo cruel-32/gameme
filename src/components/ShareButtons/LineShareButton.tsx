@@ -28,7 +28,7 @@ const LineBtnWrap = styled.div`
 
 export default (props: LineShareButtonProps) => {
   const ref = useRef(null);
-  const { url = 'https://gameme.netlify.app' } = props;
+  const { url = 'https://tegame.netlify.app' } = props;
 
   useEffect(() => {
     const customWin: any = typeof window !== 'undefined' ? window : null;

@@ -2,12 +2,12 @@ import { Resource } from 'i18next';
 
 export const ko: Resource = {
   translation: {
-    findDiff: '틀린 그림 찾기',
+    findDiff: '관찰력 테스트',
     findDiffDesc: '60초 동안 틀린 그림을 최대한 많이 찾아보세요',
     seconds: '초',
     yourFriend1: '당신의 친구의 점수는',
     yourFriend2: '이네요! 당신이 한번 발라주세요!',
-    findDiffGrade1: '인정합니다. 당신은 틀린그림찾기의 신입니다!!',
+    findDiffGrade1: '인정합니다. 당신은 관찰력의 신입니다!!',
     findDiffGrade2: '와우! 현미경이세요? 프로시네요!',
     findDiffGrade3: '오! 혹시 몽골인? 잘 찾네요!',
     findDiffGrade4: '잘 찾았는데 좀 아깝네요.',

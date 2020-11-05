@@ -27,7 +27,7 @@ const KakaoBtnWrap = styled.div`
 
 export default (props: KakaoShareButtonProps) => {
   const {
-    url = 'https://gameme.netlify.app',
+    url = 'https://tegame.netlify.app',
     imageUrl = 'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
     title = '게임공유',
     description = '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
@@ -40,7 +40,7 @@ export default (props: KakaoShareButtonProps) => {
   const shareToKakao = () => {
     const customWin: any = typeof window !== 'undefined' ? window : null;
     if (customWin?.Kakao) {
-      if(!customWin?.Kakao?.isInitialized()){
+      if (!customWin?.Kakao?.isInitialized()) {
         customWin?.Kakao?.init('6c7e2a687597c898c1cc7b78baf543df');
       }
       customWin?.Kakao?.Link?.sendDefault({
