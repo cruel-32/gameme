@@ -186,4 +186,92 @@ export const imageData: IFindDiffImageData[] = [
       },
     ],
   },
+
+  {
+    img: '/images/findDiff/celeb/pyoapple/1.jpg',
+    diffImg: '/images/findDiff/celeb/pyoapple/1_diff.jpg',
+    introduce: '모델 겸 유튜버, 스트리머이신 표은지님입니다',
+    description: '진정한 베이글녀는 바로 그녀가 아닐까요!',
+    url: 'https://www.instagram.com/pyoapple',
+    tags: ['셀럽', '연예인', '캔디슬', '셀피'],
+    author: 'pyoapple',
+    diffPoints: [
+      {
+        top: '69%',
+        left: '76%',
+        width: '10%',
+        height: '6%',
+      },
+    ],
+  },
+
+  {
+    img: '/images/findDiff/celeb/pyoapple/2.jpg',
+    diffImg: '/images/findDiff/celeb/pyoapple/2_diff.jpg',
+    introduce: '모델 겸 유튜버, 스트리머이신 표은지님입니다',
+    description: '핑크핑크 여대생 같은 최강 동안녀네요!',
+    url: 'https://www.instagram.com/pyoapple',
+    tags: ['셀럽', '연예인', '캔디슬', '셀피'],
+    author: 'pyoapple',
+    diffPoints: [
+      {
+        top: '86%',
+        left: '53%',
+        width: '19%',
+        height: '13%',
+      },
+    ],
+  },
+  {
+    img: '/images/findDiff/celeb/pyoapple/3.jpg',
+    diffImg: '/images/findDiff/celeb/pyoapple/3_diff.jpg',
+    introduce: '모델 겸 유튜버, 스트리머이신 표은지님입니다',
+    description: '귀여운 얼굴에 뇌쇄적인 눈빛을 가졌네요!',
+    url: 'https://www.instagram.com/pyoapple',
+    tags: ['셀럽', '연예인', '캔디슬', '셀피'],
+    author: 'pyoapple',
+    diffPoints: [
+      {
+        top: '39%',
+        left: '11%',
+        width: '10%',
+        height: '11%',
+      },
+    ],
+  },
+
+  {
+    img: '/images/findDiff/celeb/pyoapple/4.jpg',
+    diffImg: '/images/findDiff/celeb/pyoapple/4_diff.jpg',
+    introduce: '모델 겸 유튜버, 스트리머이신 표은지님입니다',
+    description: '귀여운 동안 얼굴 뒤에 이런 뒤태 숨기고 있었다니!',
+    url: 'https://www.instagram.com/pyoapple',
+    tags: ['셀럽', '연예인', '캔디슬', '셀피'],
+    author: 'pyoapple',
+    diffPoints: [
+      {
+        top: '31%',
+        left: '0%',
+        width: '12%',
+        height: '5%',
+      },
+    ],
+  },
+  {
+    img: '/images/findDiff/celeb/pyoapple/5.jpg',
+    diffImg: '/images/findDiff/celeb/pyoapple/5_diff.jpg',
+    introduce: '모델 겸 유튜버, 스트리머이신 표은지님입니다',
+    description: '화사한 날씨만큼 눈부신 미모네요!',
+    url: 'https://www.instagram.com/pyoapple',
+    tags: ['셀럽', '연예인', '캔디슬', '셀피'],
+    author: 'pyoapple',
+    diffPoints: [
+      {
+        top: '72%',
+        left: '2%',
+        width: '7%',
+        height: '9%',
+      },
+    ],
+  },
 ];
