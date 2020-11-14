@@ -98,15 +98,15 @@ export const WhoIsThis = () => {
       {page === 2 && <OuttroView />}
       <Sharebuttons
         kakao={{
-          url: 'https://tegame.netlify.app/game/whoIsThis',
+          url: 'https://test-world.netlify.app/game/whoIsThis',
           title: `${t('whoIsThis')}, ${t('letsTry')}`,
           description,
         }}
         line={{
-          url: 'https://tegame.netlify.app/game/whoIsThis',
+          url: 'https://test-world.netlify.app/game/whoIsThis',
         }}
         facebook={{
-          url: 'https://tegame.netlify.app/game/whoIsThis',
+          url: 'https://test-world.netlify.app/game/whoIsThis',
         }}
       />
     </div>

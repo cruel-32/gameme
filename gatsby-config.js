@@ -25,7 +25,8 @@ module.exports = {
         // Any additional create only fields (optional)
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: 'tegame.netlify.app',
+        cookieDomain: 'test-world.netlify.app',
+        icon: `/images/common/favicon.png`,
       },
     },
   ],

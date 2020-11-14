@@ -19,7 +19,7 @@ const FacebookBtnWrap = styled.div`
 `;
 
 export default (props: FacebookShareButtonProps) => {
-  const { url = 'https://tegame.netlify.app' } = props;
+  const { url = 'https://test-world.netlify.app' } = props;
 
   return (
     <FacebookBtnWrap

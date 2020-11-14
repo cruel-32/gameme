@@ -57,11 +57,20 @@ const Nav = styled.div`
   top: 0px;
   z-index: 20;
   width: 100%;
-  background: #108db8;
+  display: flex;
+  background: #fff;
+  padding: 0.75rem;
   a {
-    color: white;
-    padding: 1rem;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    img {
+      width: 23%;
+    }
+    span {
+      color: black;
+      padding: 0.25rem;
+      font-size: 1.25rem;
+    }
   }
 `;
 
@@ -70,7 +79,6 @@ const ContentWrap = styled.div`
   flex-wrap: 'wrap';
   justify-content: 'space-around';
   overflow: 'hidden';
-  // backgroundColor: theme.palette.background.paper;
   max-width: 1200;
   margin: '0 auto';
   font-size: '18px';
@@ -121,7 +129,13 @@ export default (props: IThemeProps) => {
       <CssBaseline />
       <GlobalStyle />
       <Nav>
-        <a href="/">{t('sitename')}</a>
+        {/* <a href="/">{t('sitename')}</a> */}
+        <div>
+          <a href="/">
+            <img src="/images/common/logo.png" alt="Test World Logo" />
+            <span>{t('sitename')}</span>
+          </a>
+        </div>
       </Nav>
       <ContentWrap id="fb-root">{children}</ContentWrap>
     </ThemeProvider>

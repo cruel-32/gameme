@@ -3,10 +3,10 @@ import { Resource } from 'i18next';
 export const ko: Resource = {
   translation: {
     score: '점',
-    welcome: '테겜에 오신 것을 환영합니다',
+    welcome: '테스트월드에 오신 것을 환영합니다',
     gameList: '게임 목록',
     loading: '로딩중',
-    sitename: '테겜',
+    sitename: '테스트월드',
     yourScore: '당신의 점수는',
     letsTry: '도전하세요',
     SNS: 'SNS 공유하기',
@@ -24,10 +24,10 @@ export const ko: Resource = {
 export const en: Resource = {
   translation: {
     score: 'score',
-    welcome: 'Welcome to the Tegame',
+    welcome: 'Welcome to the Test World',
     gameList: 'Game list',
     loading: 'Loading',
-    sitename: 'Tegame',
+    sitename: 'Test World',
     yourScore: 'Your score is',
     letsTry: "Let's try",
     SNS: 'SNS share',

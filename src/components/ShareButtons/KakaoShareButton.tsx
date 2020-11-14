@@ -27,7 +27,7 @@ const KakaoBtnWrap = styled.div`
 
 export default (props: KakaoShareButtonProps) => {
   const {
-    url = 'https://tegame.netlify.app',
+    url = 'https://test-world.netlify.app',
     imageUrl = 'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
     title = '게임공유',
     description = '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
