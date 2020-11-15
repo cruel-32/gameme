@@ -490,10 +490,10 @@ export const imageData: IFindDiffImageData[] = [
     author: 'zzyuridayo',
     diffPoints: [
       {
-        top: '24%',
-        left: '13%',
-        width: '8%',
-        height: '4%',
+        top: '20%',
+        left: '14%',
+        width: '7%',
+        height: '5%',
       },
     ],
   },
