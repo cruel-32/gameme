@@ -48,19 +48,19 @@ export const OuttroView = () => {
   };
 
   useEffect(() => {
-    if (round > 55) {
+    if (round > 40) {
       setGrade(1);
-    } else if (round > 40 && round <= 55) {
+    } else if (round > 30 && round <= 40) {
       setGrade(2);
-    } else if (round > 27 && round <= 40) {
+    } else if (round > 20 && round <= 30) {
       setGrade(3);
-    } else if (round > 17 && round <= 27) {
+    } else if (round > 10 && round <= 20) {
       setGrade(4);
-    } else if (round > 10 && round <= 17) {
+    } else if (round > 6 && round <= 10) {
       setGrade(5);
-    } else if (round > 5 && round <= 10) {
+    } else if (round > 3 && round <= 6) {
       setGrade(6);
-    } else if (round <= 5) {
+    } else if (round <= 3) {
       setGrade(7);
     }
   }, [round]);
