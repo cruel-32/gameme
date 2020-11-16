@@ -4,7 +4,7 @@ export const ko: Resource = {
   translation: {
     findDiff: '관찰력 테스트',
     findDiffDesc:
-      '어디가 다를까요? 60초 동안 틀린 그림을 최대한 많이 찾아보세요',
+      '어디가 다를까요? 60초 동안 셀럽들의 사진 속에서 틀린 부분을 최대한 많이 찾아보세요',
     seconds: '초',
     yourFriend1: '당신의 친구의 점수는',
     yourFriend2: '이네요! 당신이 한번 발라주세요!',
@@ -21,7 +21,8 @@ export const ko: Resource = {
 export const en: Resource = {
   translation: {
     findDiff: 'The find differences game',
-    findDiffDesc: 'Find as many differences as possible in 60 seconds',
+    findDiffDesc:
+      'Where will it be different? Find as many difference as possible in celebrities photos in 60 seconds',
     seconds: 'sec',
     yourFriend1: 'Your friend scored',
     yourFriend2: '! You can break it!',
