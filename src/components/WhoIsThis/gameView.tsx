@@ -14,11 +14,12 @@ const GameViewWrap = styled.div`
   position: relative;
   .para {
     font-size: 16px;
+    margin: 20px 30px 10px 30px;
   }
   .quiz-image {
     position: relative;
     margin: 0 auto;
-    width: 96%;
+    width: 90%;
     > img {
       &:first-child {
         position: relative;
@@ -32,9 +33,13 @@ const GameViewWrap = styled.div`
     }
   }
   .button-wrap {
-    margin: 20px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
     button {
-      margin: 2px 2px;
+      flex: 1 1 auto;
+      padding: 2px;
+      margin: 2px;
+      min-width: auto;
     }
   }
 `;
@@ -45,7 +50,7 @@ export const GameView = () => {
   const { setScore, setRound } = useContext(ActionContext);
   const [playGood, { stop: stopGood }] = useSound('/sounds/whoIsThis/good.mp3');
   const [playBad, { stop: stopBad }] = useSound('/sounds/whoIsThis/bad.mp3');
-  const { img, description, answer, name, examples } = quizImageData?.[0] || {};
+  const { img, description, answer, examples } = quizImageData?.[0] || {};
   const [wrongCount, setWrongCount] = useState(0);
   const [entries, setEntries] = useState([4, 3, 2, 1, 0]);
 
@@ -93,8 +98,8 @@ export const GameView = () => {
               />
             ))}
           </div>
+          <p className="para">이 사람은 누구일까요?</p>
           <div className="button-wrap">
-            <p className="para">이 사람은 누구일까요?</p>
             {examples.map((example, i) => (
               <Button
                 onClick={() => clickExample(i)}

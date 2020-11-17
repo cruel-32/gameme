@@ -30,7 +30,6 @@ declare interface IWhoIsThisActionPayload {
 declare interface IWhoIsThisImageData {
   img: string;
   description: string;
-  name: string;
   examples: string[];
   answer: 0 | 1 | 2 | 3 | 4;
 }
