@@ -29,7 +29,6 @@ declare interface IWhoIsThisActionPayload {
 
 declare interface IWhoIsThisImageData {
   img: string;
-  description: string;
-  examples: string[];
-  answer: 0 | 1 | 2 | 3 | 4;
+  nameKey: string;
+  gender: 'M' | 'F';
 }

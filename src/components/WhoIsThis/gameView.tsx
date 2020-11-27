@@ -2,12 +2,13 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useMemo, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import { StateContext, ActionContext } from '@/context/whoIsThis';
 import Button from '@material-ui/core/Button';
 import { useInterval } from '@/hooks/useInterval';
+import { getRandomExamples } from '@/data/whoIsThis';
 
 const GameViewWrap = styled.div`
   text-align: center;
@@ -19,7 +20,7 @@ const GameViewWrap = styled.div`
   .quiz-image {
     position: relative;
     margin: 0 auto;
-    width: 90%;
+    width: 75%;
     > img {
       &:first-child {
         position: relative;
@@ -48,11 +49,14 @@ export const GameView = () => {
   const { score, quizImageData } = useContext(StateContext);
   const { round } = useContext(StateContext);
   const { setScore, setRound } = useContext(ActionContext);
-  const [playGood, { stop: stopGood }] = useSound('/sounds/whoIsThis/good.mp3');
-  const [playBad, { stop: stopBad }] = useSound('/sounds/whoIsThis/bad.mp3');
-  const { img, description, answer, examples } = quizImageData?.[0] || {};
+  const [playGood] = useSound('/sounds/whoIsThis/good.mp3');
+  const [playBad] = useSound('/sounds/whoIsThis/bad.mp3');
+  const { img, nameKey } = quizImageData?.[0] || {};
   const [wrongCount, setWrongCount] = useState(0);
   const [entries, setEntries] = useState([4, 3, 2, 1, 0]);
+  const [examples, answer] = useMemo(() => getRandomExamples(nameKey), [
+    nameKey,
+  ]);
 
   const clickExample = (clickedAnswer: number) => {
     if (answer === clickedAnswer) {
@@ -82,7 +86,7 @@ export const GameView = () => {
     () => {
       setEntries(entries.slice(1));
     },
-    entries.length > 1 ? 2000 : null,
+    entries.length > 1 ? 4000 : null,
   );
 
   return (
@@ -94,7 +98,7 @@ export const GameView = () => {
               <img
                 key={`${img + item}`}
                 src={`${img}_${item}.jpg`}
-                alt={description}
+                alt={nameKey}
               />
             ))}
           </div>
