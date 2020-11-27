@@ -25,12 +25,14 @@ const GameViewWrap = styled.div`
       &:first-child {
         position: relative;
         z-index: 15;
+        visibility: visible;
       }
       position: absolute;
       z-index: 14;
       top: 0;
       left: 0;
       max-width: 100%;
+      visibility: hidden;
     }
   }
   .button-wrap {
