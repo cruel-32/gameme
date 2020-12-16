@@ -125,6 +125,11 @@ export default (props: IThemeProps) => {
           src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v8.0"
           nonce="p7szCzSF"
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-P23E4M8FT4"
+        />
+        <script src="/js/ga.js" />
       </Helmet>
       <CssBaseline />
       <GlobalStyle />
