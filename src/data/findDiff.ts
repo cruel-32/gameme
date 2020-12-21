@@ -670,8 +670,8 @@ export const imageData: IFindDiffImageData[] = [
     ],
   },
   {
-    img: '/images/findDiff/celeb/real___yami/4.jpg',
-    diffImg: '/images/findDiff/celeb/real___yami/4_diff.jpg',
+    img: '/images/findDiff/celeb/real___yami/5.jpg',
+    diffImg: '/images/findDiff/celeb/real___yami/5_diff.jpg',
     introduce: '유명 코스플레이어 야미님입니다.',
     description: '마치 만화에서 튀어나온듯한 비현실적 귀여움입니다!',
     url: 'https://www.instagram.com/real___yami',
@@ -791,8 +791,8 @@ export const imageData: IFindDiffImageData[] = [
     ],
   },
   {
-    img: '/images/findDiff/celeb/sejinming/6.jpg',
-    diffImg: '/images/findDiff/celeb/sejinming/6_diff.jpg',
+    img: '/images/findDiff/celeb/sejinming/7.jpg',
+    diffImg: '/images/findDiff/celeb/sejinming/7_diff.jpg',
     introduce: '인플루엔서 기묘한 기무세딘님입니다.',
     description: '섹시함이 무엇인지 보여주는 사진이네요!',
     url: 'https://www.instagram.com/sejinming',
