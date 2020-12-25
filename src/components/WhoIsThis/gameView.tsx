@@ -20,7 +20,8 @@ const GameViewWrap = styled.div`
   .quiz-image {
     position: relative;
     margin: 0 auto;
-    width: 75%;
+    /* width: 75%; */
+    height: 60vh;
     > img {
       &:first-child {
         position: relative;
@@ -32,6 +33,7 @@ const GameViewWrap = styled.div`
       top: 0;
       left: 0;
       max-width: 100%;
+      height: 100%;
       visibility: hidden;
     }
   }

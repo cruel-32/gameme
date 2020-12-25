@@ -30,6 +30,16 @@ export const FemaleNames: NameTypes = {
   tzuyu: '쯔위',
 };
 
+export const MaleNames: NameTypes = {
+  jhope: '제이홉',
+  jimin: '지민',
+  jin: '진',
+  jungkook: '정국',
+  rm: '랩몬스터',
+  suga: '슈가',
+  v: '뷔',
+};
+
 export const imageData: IWhoIsThisImageData[] = [
   {
     img: '/images/whoIsThis/choyuri/1',
@@ -157,9 +167,43 @@ export const imageData: IWhoIsThisImageData[] = [
     nameKey: 'tzuyu',
     gender: 'F',
   },
+  {
+    img: '/images/whoIsThis/jhope/1',
+    nameKey: 'jhope',
+    gender: 'M',
+  },
+  {
+    img: '/images/whoIsThis/jimin/1',
+    nameKey: 'jimin',
+    gender: 'M',
+  },
+  {
+    img: '/images/whoIsThis/jin/1',
+    nameKey: 'jin',
+    gender: 'M',
+  },
+  {
+    img: '/images/whoIsThis/jungkook/1',
+    nameKey: 'jungkook',
+    gender: 'M',
+  },
+  {
+    img: '/images/whoIsThis/rm/1',
+    nameKey: 'rm',
+    gender: 'M',
+  },
+  {
+    img: '/images/whoIsThis/suga/1',
+    nameKey: 'suga',
+    gender: 'M',
+  },
+  {
+    img: '/images/whoIsThis/v/1',
+    nameKey: 'v',
+    gender: 'M',
+  },
 ];
 
-export const MaleNames: NameTypes = {};
 export const getRandomExamples = (nameKey: string): [string[], number] => {
   try {
     const data = imageData.find((item) => item.nameKey === nameKey);
