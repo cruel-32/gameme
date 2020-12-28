@@ -12,11 +12,11 @@ const ColoredScore = styled.div`
   font-size: 32px;
   color: ${(props: ScoreProps) => {
     const { score } = props;
-    if (score > 3) {
-      return 'yellow';
+    if (score > 3 && score <= 6) {
+      return 'green';
     }
     if (score > 6) {
-      return 'green';
+      return 'red';
     }
     return 'black';
   }};

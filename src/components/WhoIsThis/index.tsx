@@ -88,7 +88,7 @@ export const WhoIsThis = () => {
             <img
               key={i + j}
               src={`${quizImage.img}_${item}.jpg`}
-              alt={quizImage.description}
+              alt={quizImage.nameKey}
             />
           ))}
         </Preview>

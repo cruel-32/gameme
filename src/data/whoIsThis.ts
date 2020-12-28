@@ -28,6 +28,7 @@ export const FemaleNames: NameTypes = {
   rose: '로제',
   sana: '사나',
   tzuyu: '쯔위',
+  yeonwoo: '연우',
 };
 
 export const MaleNames: NameTypes = {
@@ -165,6 +166,11 @@ export const imageData: IWhoIsThisImageData[] = [
   {
     img: '/images/whoIsThis/tzuyu/1',
     nameKey: 'tzuyu',
+    gender: 'F',
+  },
+  {
+    img: '/images/whoIsThis/yeonwoo/1',
+    nameKey: 'yeonwoo',
     gender: 'F',
   },
   {

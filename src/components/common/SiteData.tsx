@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import styled, {
@@ -7,6 +7,8 @@ import styled, {
   DefaultTheme,
 } from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Select from '@material-ui/core/Select';
+import MenuItem, { MenuItemProps } from '@material-ui/core/MenuItem';
 
 import '@/lib/i18n';
 
@@ -54,6 +56,8 @@ const GlobalStyle = createGlobalStyle`
 
 const Nav = styled.div`
   position: sticky;
+  display: flex;
+  justify-content: space-between;
   top: 0px;
   z-index: 20;
   width: 100%;
@@ -93,14 +97,47 @@ export interface IThemeProps {
   description?: string;
 }
 
+const languages: MenuItemProps[] = [
+  {
+    value: 'ko',
+    key: 'Korean',
+  },
+  {
+    value: 'en',
+    key: 'English',
+  },
+];
+
 export default (props: IThemeProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     children,
     theme = defaultTheme,
     title = `${t('welcome')}`,
     description = t('welcome'),
   } = props;
+  const [lang, setLang] = useState<string>(
+    globalThis?.window?.localStorage?.getItem('test-world-lang') || 'ko',
+  );
+
+  const handleChange = (
+    e: React.ChangeEvent<{
+      name?: string;
+      value: string;
+    }>,
+  ) => {
+    const { value } = e.target;
+    if (value) {
+      setLang(value);
+      if (globalThis?.window) {
+        globalThis?.window.localStorage.setItem('test-world-lang', value);
+      }
+    }
+  };
+
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -135,11 +172,20 @@ export default (props: IThemeProps) => {
       <GlobalStyle />
       <Nav>
         {/* <a href="/">{t('sitename')}</a> */}
-        <div>
+        <div className="left-side">
           <a href="/">
             <img src="/images/common/logo.png" alt="Test World Logo" />
             <span>{t('sitename')}</span>
           </a>
+        </div>
+        <div className="right-side">
+          <Select onChange={handleChange} value={lang}>
+            {languages.map(({ value, key }) => (
+              <MenuItem key={value} value={value}>
+                {key}
+              </MenuItem>
+            ))}
+          </Select>
         </div>
       </Nav>
       <ContentWrap id="fb-root">{children}</ContentWrap>

@@ -807,4 +807,40 @@ export const imageData: IFindDiffImageData[] = [
       },
     ],
   },
+
+  {
+    img: '/images/findDiff/celeb/jennies___blackpink/1.jpg',
+    diffImg: '/images/findDiff/celeb/jennies___blackpink/1_diff.jpg',
+    introduce: 'K-POP스타 블랭핑크의 제니입니다!',
+    description: '세계적인 스타 제니입니다!',
+    url: 'https://www.instagram.com/jennies___blackpink',
+    tags: ['셀럽', '연예인', '블랭핑크', '제니', '모델', '셀피'],
+    author: 'jennies___blackpink',
+    diffPoints: [
+      {
+        top: '82%',
+        left: '72%',
+        width: '9%',
+        height: '7%',
+      },
+    ],
+  },
+
+  {
+    img: '/images/findDiff/celeb/jennies___blackpink/2.jpg',
+    diffImg: '/images/findDiff/celeb/jennies___blackpink/2_diff.jpg',
+    introduce: 'K-POP스타 블랭핑크의 제니입니다!',
+    description: '세계적인 스타 제니입니다!',
+    url: 'https://www.instagram.com/jennies___blackpink',
+    tags: ['셀럽', '연예인', '블랭핑크', '제니', '모델', '셀피'],
+    author: 'jennies___blackpink',
+    diffPoints: [
+      {
+        top: '0%',
+        left: '84%',
+        width: '16%',
+        height: '20%',
+      },
+    ],
+  },
 ];

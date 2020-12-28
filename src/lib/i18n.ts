@@ -7,7 +7,7 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: 'ko',
+    lng: globalThis?.window?.localStorage?.getItem('test-world-lang') || 'ko',
     fallbackLng: 'ko',
     interpolation: {
       escapeValue: false,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
@@ -23,8 +23,14 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const classes = useStyles();
+
+  useEffect(() => {
+    i18n.changeLanguage(
+      globalThis?.window?.localStorage?.getItem('test-world-lang') || 'ko',
+    );
+  }, []);
 
   return (
     <SiteData>
