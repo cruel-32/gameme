@@ -29,6 +29,10 @@ export const FemaleNames: NameTypes = {
   sana: '사나',
   tzuyu: '쯔위',
   yeonwoo: '연우',
+  hwasa: '화사',
+  moonbyul: '문별',
+  solar: '솔라',
+  wheein: '휘인',
 };
 
 export const MaleNames: NameTypes = {
@@ -171,6 +175,26 @@ export const imageData: IWhoIsThisImageData[] = [
   {
     img: '/images/whoIsThis/yeonwoo/1',
     nameKey: 'yeonwoo',
+    gender: 'F',
+  },
+  {
+    img: '/images/whoIsThis/hwasa/1',
+    nameKey: 'hwasa',
+    gender: 'F',
+  },
+  {
+    img: '/images/whoIsThis/solar/1',
+    nameKey: 'solar',
+    gender: 'F',
+  },
+  {
+    img: '/images/whoIsThis/moonbyul/1',
+    nameKey: 'moonbyul',
+    gender: 'F',
+  },
+  {
+    img: '/images/whoIsThis/wheein/1',
+    nameKey: 'wheein',
     gender: 'F',
   },
   {
