@@ -33,6 +33,7 @@ export const FemaleNames: NameTypes = {
   moonbyul: '문별',
   solar: '솔라',
   wheein: '휘인',
+  nancy: '낸시',
 };
 
 export const MaleNames: NameTypes = {
@@ -106,7 +107,6 @@ export const imageData: IWhoIsThisImageData[] = [
     nameKey: 'sakura',
     gender: 'F',
   },
-
   {
     img: '/images/whoIsThis/chaeyoung/1',
     nameKey: 'chaeyoung',
@@ -197,6 +197,12 @@ export const imageData: IWhoIsThisImageData[] = [
     nameKey: 'wheein',
     gender: 'F',
   },
+  {
+    img: '/images/whoIsThis/nancy/1',
+    nameKey: 'nancy',
+    gender: 'F',
+  },
+
   {
     img: '/images/whoIsThis/jhope/1',
     nameKey: 'jhope',
